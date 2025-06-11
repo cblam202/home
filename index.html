@@ -201,5 +201,75 @@
   02A Bluemont | <a href="mailto:cblam@ksu.edu">cblam@ksu.edu</a> | <a href="tel:7855322030">785-532-2030</a><br>
   1114 Mid-Campus Dr, Manhattan, Kansas 66506<br>
   </p>
+
+  <!-- Like / Comment / Share with section title -->
+  <div style="margin-top: 3em; border-top: 1px solid #ccc; padding-top: 2em; max-width: 500px; margin: auto; font-family: Arial, sans-serif; font-size: 14px; color: #333;">
+    
+    <!-- Section Title -->
+    <h3 style="text-align: right">Leave a Comment</h3>
+
+    <form id="interactionForm" action="https://formsubmit.io/send/cblam@ksu.edu" method="POST">
+      <input type="hidden" name="_redirect" value="https://cblam202.github.io/home#thank-you">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="type" id="formType" value="">
+      <input type="hidden" name="message" id="formMessage" value="">
+
+      <input type="text" name="name" placeholder="Your name" required
+            style="width: 96.3%; padding: 8px; margin-bottom: 1em; border-radius: 4px; border: 1px solid #ccc;"><br>
+
+      <div style="display: flex; justify-content: space-between;">
+        <button type="button" onclick="sendLike()" style="flex: 1; margin-right: 5px; padding: 8px; background-color: #e7f3ff; color: #1877f2; border: 1px solid #1877f2; border-radius: 4px; cursor: pointer;">
+          👍 Like
+        </button>
+        <button type="button" onclick="toggleCommentBox()" style="flex: 1; margin-right: 5px; padding: 8px; background-color: #f0f2f5; color: #050505; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
+          💬 Comment
+        </button>
+        <button type="button" onclick="copyLink()" style="flex: 1; padding: 8px; background-color: #f0f2f5; color: #050505; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
+          📤 Share
+        </button>
+      </div>
+
+      <!-- Comment box -->
+      <div id="commentBox" style="display: none; margin-top: 1em;">
+        <textarea id="commentInput" rows="3" placeholder="Write a comment..." style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+        <button type="button" onclick="sendComment()" style="margin-top: 0.5em; float: right; padding: 6px 12px; background-color: #1877f2; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit Comment</button>
+        <div style="clear: both;"></div>
+      </div>
+    </form>
+
+    <p id="copyMsg" style="text-align: center; font-size: 13px; color: green; display: none; margin-top: 1em;">Link copied to clipboard!</p>
+  </div>
+
+  <script>
+    function sendLike() {
+      document.getElementById('formType').value = 'Like';
+      document.getElementById('formMessage').value = 'liked this page';
+      document.getElementById('interactionForm').submit();
+    }
+
+    function toggleCommentBox() {
+      const box = document.getElementById('commentBox');
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+      document.getElementById('commentInput').focus();
+    }
+
+    function sendComment() {
+      const comment = document.getElementById('commentInput').value.trim();
+      if (!comment) return alert('Please write a comment.');
+      document.getElementById('formType').value = 'Comment';
+      document.getElementById('formMessage').value = comment;
+      document.getElementById('interactionForm').submit();
+    }
+
+    function copyLink() {
+      const url = 'https://cblam202.github.io/home';
+      navigator.clipboard.writeText(url).then(() => {
+        const msg = document.getElementById('copyMsg');
+        msg.style.display = 'block';
+        setTimeout(() => msg.style.display = 'none', 2000);
+      });
+    }
+  </script>
+
 </body>
 </html>
