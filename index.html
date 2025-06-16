@@ -2,21 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chanh Bao Lam, Ph.D.</title>
+  <meta name="description" content="Chanh Bao Lam, Ph.D. - Educator and researcher in teacher education, teacher workforce policy, and accreditation">
+  <meta name="author" content="Chanh Bao Lam">
+  <meta name="keywords" content="Chanh Bao Lam, education, policy research, accreditation, program review, teacher workforce, teacher shortages, teacher turnover, Kansas State University, KSU, K-State, Council for the Accreditation of Educator Preparation, CAEP ">
+
+  <!-- Open Graph for better social sharing -->
+  <meta property="og:title" content="Chanh Bao Lam, Ph.D.">
+  <meta property="og:description" content="Educator and researcher in teacher education, teacher workforce policy, and accreditation">
+  <meta property="og:image" content="https://cblam202.github.io/home/pictures/Chanh_small.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cblam202.github.io/home">
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#512888">
+
+  <!-- Favicon and Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="shortcut icon" href="icons/favicon.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/android-chrome-512x512.png">
+  <link rel="manifest" href="icons/site.webmanifest">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Style elements -->
   <style>
     body {
       font-family: 'Merriweather', Georgia, serif;
       max-width: 800px;
       margin: auto;
-      padding: 40px;
+      padding: 20px;
       line-height: 1.6;
       color: #000;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
     }
     .profile-pic {
       width: 120px;
@@ -24,13 +46,24 @@
       border-radius: 50%;
       object-fit: cover;
     }
+    .nav-inline {
+      white-space: nowrap;
+    }
+    .nav-inline a {
+      margin-left: 10px;
+      font-size: 0.95em;
+      color: #512888;
+      text-decoration: none;
+    }
+    .nav-inline a:hover {
+      text-decoration: underline;
+    }
     .ipa {
       font-family: 'Charis SIL', 'Doulos SIL', 'Arial Unicode MS', serif;
       color: #555;
     }
     h1 {
-      font-size: 28px;
-      margin-bottom: 0.5em;
+      margin-bottom: -0.50em;
       -webkit-text-stroke: 0.5px #000;
     }
     h2 {
@@ -51,13 +84,47 @@
   </style>
 </head>
 <body>
-    <div class="header">
-    <img src="pictures/Chanh_small.png" alt="Chanh Bao Lam" class="profile-pic">
-    <div>
-      <h1><b>Chanh Bao Lam, Ph.D.</b></h1>
-      <h3 class="ipa">Pronunciation: /cɑːɲ-bɑʊ-ləm/ <a href="https://www.name-coach.com/chanhlam" target="_blank"><img src="pictures/icon_namecoach.png" alt="Namecoach" style="height: 20px; vertical-align: middle;"></a></h3>
-    </div>
-  </div>
+
+  <!-- Header using layout table with two-row nav aligned to header -->
+  <table style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <!-- Align the profile picture vertically with the name block -->
+      <td style="vertical-align: top;">
+        <img src="pictures/Chanh_small.png" alt="Chanh Bao Lam" class="profile-pic">
+      </td>
+      <td style="vertical-align: top;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="text-align: left; vertical-align: top;">
+              <h1><b>Chanh Bao Lam, Ph.D.</b></h1>
+              <h3 class="ipa">
+                Pronunciation: /cɑːɲ-bɑʊ-ləm/
+                <a href="https://www.name-coach.com/chanhlam" target="_blank">
+                  <img src="pictures/icon_namecoach.png" alt="Namecoach" style="height: 20px; vertical-align: middle;">
+                </a>
+              </h3>
+            </td>
+            <td style="text-align: right; vertical-align: top; padding-top: 28px;">
+              <nav class="nav-inline">
+                <table style="border-collapse: collapse; margin-left: auto;">
+                  <tr>
+                    <td><a href="#research">Research</a> |</td>
+                    <td><a href="#teaching">Teaching</a> |</td>
+                    <td><a href="#services">Service</a></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td><a href="#public">Impact</a> |</td>
+                    <td><a href="#contact">Contact</a></td>
+                  </tr>
+                </table>
+              </nav>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 
   <!-- About -->
   <h2>About</h2>
@@ -75,7 +142,7 @@
   </div>
 
   <!-- Research -->
-  <h2>Research</h2>
+  <h2 id="research">Research</h2>
   <p>My research focuses on policy and practice in teacher education, teacher workforce and labor markets, and teacher labor activism. I have authored and coauthored several papers on these topics, including:</p>
   <ul>
     <li>
@@ -129,7 +196,7 @@
 
 
   <!-- Teaching -->
-  <h2>Teaching</h2>
+  <h2 id="teaching">Teaching</h2>
   <p>I teach undergraduate and graduate courses on educational data, statistical analysis, and data-informed decision making in broad educational settings, including:</p>
   <ul>
     <li>
@@ -147,7 +214,7 @@
   </ul>
 
   <!-- Service -->
-  <h2>Services</h2>
+  <h2 id="services">Service</h2>
   <p>I support program review and accreditation efforts at Kansas State University. The K-State Educator Preparation Provider (EPP) is reviewed by the Kansas State Department of Education (<a href="https://www.ksde.gov/" target="_blank">KSDE</a>) and accredited by the Council for the Accreditation of Educator Preparation (<a href="https://caepnet.org/" target="_blank">CAEP</a>). My areas of expertise include CAEP sufficiency for EPP-created assessments, educational technology, quality assurance systems, stakeholder engagement, and continuous improvement. For our most recent visit (spring 2023), our EPP was awarded with the <a href="https://caepnet.org/~/media/Files/caep/newsroom/2024-murray-recognition.pdf?la=en" target="_blank">2024 Frank Murray Leadership Recognition for Continuous Improvement</a>.</p>
 
   <p>I have authored and co-authored several white papers that were submitted for the EPP's CAEP Accreditation 2023: </p>
@@ -160,7 +227,7 @@
   </ul>
 
   <!-- Media -->
-  <h2>Selected Policy Influences</h2>
+  <h2 id="public">Selected Policy Influences</h2>
   <ul>
     <li>Edwards, K. A. (2023, September). <i>Child care since the pandemic: Macroeconomic impacts of public policy measures</i> [Testimony before the Senate Subcommittee on Economic Policy]. <a href="https://www.banking.senate.gov/imo/media/doc/edwards_testimony_9-20-23.pdf">https://www.banking.senate.gov/imo/media/doc/edwards_testimony_9-20-23.pdf</a></li>
     <li>The Council of Economic Advisers. (2023, March). <i>Economic report of the President</i>. <a href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/03/ERP-2023.pdf">https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/03/ERP-2023.pdf</a></li>
@@ -216,7 +283,7 @@
   </table>
 
   <!-- Contact -->
-  <h2>Contact</h2>
+  <h2 id="contact">Contact</h2>
   <p>Chanh Bao Lam, Ph.D.<br>
   <a href="https://scholar.google.com/citations?user=BVUfin0AAAAJ&hl=en&oi=sra">
     <img src="pictures/icon_gscholar.png" alt="GScholar" style="height: 20px; vertical-align: middle;"></a> 
