@@ -40,44 +40,63 @@
       line-height: 1.6;
       color: #000;
     }
+
     .profile-pic {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
     }
-    .nav-inline {
-      white-space: nowrap;
-    }
-    .nav-inline a {
-      margin-left: 10px;
+
+    .nav-responsive {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
       font-size: 0.95em;
+    }
+
+    .nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .nav-row a {
       color: #512888;
       text-decoration: none;
     }
-    .nav-inline a:hover {
+
+    .nav-row a:hover {
       text-decoration: underline;
     }
+
     .ipa {
       font-family: 'Charis SIL', 'Doulos SIL', 'Arial Unicode MS', serif;
       color: #555;
     }
+
     h1 {
       margin-bottom: -0.50em;
       -webkit-text-stroke: 0.5px #000;
     }
+
     h2 {
       margin-top: 2em;
       border-bottom: 1px solid #ccc;
       padding-bottom: 0.2em;
     }
+
     p {
       margin-bottom: 1em;
     }
+
     a {
       color: #512888;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -105,19 +124,16 @@
               </h3>
             </td>
             <td style="text-align: right; vertical-align: top; padding-top: 28px;">
-              <nav class="nav-inline">
-                <table style="border-collapse: collapse; margin-left: auto;">
-                  <tr>
-                    <td><a href="#research">Research</a> |</td>
-                    <td><a href="#teaching">Teaching</a> |</td>
-                    <td><a href="#services">Service</a></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td><a href="#public">Impact</a> |</td>
-                    <td><a href="#contact">Contact</a></td>
-                  </tr>
-                </table>
+              <nav class="nav-responsive">
+                <div class="nav-row">
+                  <a href="#research">Research</a>
+                  <a href="#teaching">Teaching</a>
+                  <a href="#services">Service</a>
+                </div>
+                <div class="nav-row">
+                  <a href="#public">Impact</a>
+                  <a href="#contact">Contact</a>
+                </div>
               </nav>
             </td>
           </tr>
