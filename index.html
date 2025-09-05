@@ -100,6 +100,15 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .site-footer {
+      text-align: center;
+      margin-top: 3em;
+      padding: 20px 0;
+      color: #777;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.06) 100%);
+      font-size: 0.95em;
+    }
   </style>
 </head>
 <body>
@@ -336,5 +345,14 @@
   1114 Mid-Campus Dr, Manhattan, Kansas 66506<br>
   </p>
 
+  <!-- Copyrights -->
+  <footer class="site-footer">
+    &copy; <span id="year"></span> Chanh Bao Lam
+  </footer>
+  <script>
+    // auto-update the year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  
 </body>
 </html>
