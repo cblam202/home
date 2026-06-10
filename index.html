@@ -153,6 +153,17 @@
       background-color: #ede7f6;
     }
 
+    .feedback-button:disabled {
+      cursor: default;
+      opacity: 0.75;
+    }
+
+    .feedback-status {
+      min-width: 1em;
+      color: #666;
+      font-size: 0.78em;
+    }
+
     .site-footer {
       text-align: center;
       color: #777;
@@ -551,6 +562,7 @@
     </span>
 
     <form
+      id="feedback-form"
       class="feedback-form"
       action="https://formspree.io/f/xbdekogl"
       method="POST"
@@ -594,6 +606,12 @@
         >
           👋
         </button>
+
+        <span
+          id="feedback-status"
+          class="feedback-status"
+          aria-live="polite"
+        ></span>
       </div>
     </form>
   </div>
@@ -614,6 +632,62 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackStatus = document.getElementById('feedback-status');
+    const feedbackButtons = feedbackForm.querySelectorAll('.feedback-button');
+
+    feedbackForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const clickedButton = event.submitter;
+      const originalEmoji = clickedButton.textContent.trim();
+      const formData = new FormData(feedbackForm);
+
+      formData.set('feedback', clickedButton.value);
+
+      feedbackButtons.forEach(function (button) {
+        button.disabled = true;
+      });
+
+      clickedButton.textContent = '…';
+      feedbackStatus.textContent = '';
+
+      try {
+        const response = await fetch(feedbackForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Submission failed');
+        }
+
+        clickedButton.textContent = '✓';
+
+        window.setTimeout(function () {
+          clickedButton.textContent = originalEmoji;
+
+          feedbackButtons.forEach(function (button) {
+            button.disabled = false;
+          });
+        }, 1200);
+      } catch (error) {
+        clickedButton.textContent = originalEmoji;
+        feedbackStatus.textContent = 'Please try again.';
+
+        feedbackButtons.forEach(function (button) {
+          button.disabled = false;
+        });
+
+        window.setTimeout(function () {
+          feedbackStatus.textContent = '';
+        }, 2500);
+      }
+    });
   </script>
 
 </body>
