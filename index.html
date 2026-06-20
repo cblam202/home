@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +7,14 @@
   <meta name="description" content="Chanh Bao Lam, Ph.D. - Assistant Professor and Accreditation Analyst at Kansas State University">
   <meta name="author" content="Chanh Bao Lam">
   <meta name="keywords" content="Chanh Bao Lam, Chanh Lam, Chanh B. Lam, Assistant Professor and Accreditation Analyst, Kansas State University, K-State, College of Education, Department of Curriculum and Instruction, curriculum and instruction, teacher education, accreditation, educator preparation, program review, CAEP, KSDE, teacher workforce, teacher labor markets, teacher shortages, teacher retention, teacher turnover, teacher attrition, teacher labor activism, teacher strikes, education policy">
-
   <!-- Open Graph for better social sharing -->
   <meta property="og:title" content="Chanh Bao Lam, Ph.D.">
   <meta property="og:description" content="Assistant Professor and Accreditation Analyst at Kansas State University">
   <meta property="og:image" content="https://cblam202.github.io/home/pictures/Chanh_small.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cblam202.github.io/home">
-
   <!-- Theme Color for Mobile Browsers -->
   <meta name="theme-color" content="#512888">
-
   <!-- Favicon and Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -27,82 +23,226 @@
   <link rel="icon" type="image/png" sizes="192x192" href="icons/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icons/android-chrome-512x512.png">
   <link rel="manifest" href="icons/site.webmanifest">
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Style elements -->
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
+      width: min(calc(100% - 40px), 800px);
+      margin: 0 auto;
+      padding: 20px 0;
       font-family: 'Merriweather', Georgia, serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
       line-height: 1.6;
       color: #000;
-      background-color: #faf7fc; /* subtle lavender */
+      background-color: #faf7fc;
     }
-
+    .site-header {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1.25em;
+      align-items: start;
+    }
     .profile-pic {
-      width: 160px;
-      height: 160px;
+      width: clamp(110px, 18vw, 160px);
+      height: clamp(110px, 18vw, 160px);
       border-radius: 50%;
       object-fit: cover;
     }
-
+    .header-content {
+      min-width: 0;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1em;
+      align-items: flex-start;
+    }
+    h1 {
+      margin: 0 0 -0.5em;
+      -webkit-text-stroke: 0.5px #000;
+    }
+    h2 {
+      margin-top: 2em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.2em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    a {
+      color: #512888;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .ipa {
+      margin-top: 0.8em;
+      margin-bottom: 0.4em;
+      font-family: 'Charis SIL', 'Doulos SIL', 'Arial Unicode MS', serif;
+      color: #555;
+    }
+    .cv-button {
+      display: inline-block;
+      margin-top: 0.3em;
+      background-color: #ede7f6;
+      color: #512888;
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-size: 0.8em;
+      font-weight: normal;
+    }
+    .cv-button:hover {
+      text-decoration: none;
+      background-color: #e3dbef;
+    }
     .nav-responsive {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       gap: 4px;
+      padding-top: 8px;
       font-size: 0.95em;
     }
-
     .nav-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       justify-content: flex-end;
     }
-
     .nav-row a {
       color: #512888;
       text-decoration: none;
     }
-
     .nav-row a:hover {
       text-decoration: underline;
     }
-
-    .ipa {
-      font-family: 'Charis SIL', 'Doulos SIL', 'Arial Unicode MS', serif;
+    .feature-image {
+      display: block;
+      width: min(90%, 680px);
+      height: auto;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .image-caption {
+      margin-top: 0.5em;
+      font-size: 0.9em;
       color: #555;
+      text-align: center;
     }
-
-    h1 {
-      margin-bottom: -0.50em;
-      -webkit-text-stroke: 0.5px #000;
+    .embedded-site {
+      display: block;
+      width: min(92%, 700px);
+      height: clamp(280px, 52vw, 350px);
+      margin: 1em auto 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
-
-    h2 {
-      margin-top: 2em;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.2em;
-    }
-
-    p {
-      margin-bottom: 1em;
-    }
-
-    a {
-      color: #512888;
+    .media-card {
+      display: block;
+      width: min(92%, 520px);
+      margin: 1em auto 0;
+      text-align: left;
+      border: 1px solid #512888;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      color: inherit;
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
+    .media-card:hover {
+      text-decoration: none;
     }
-
+    .media-card-band {
+      padding: 8px 14px;
+      background: #512888;
+      color: #fff;
+      font-size: 0.85em;
+      font-weight: 700;
+    }
+    .media-card-content {
+      padding: 14px 16px;
+    }
+    .media-card-title {
+      color: #222;
+      font-size: 1em;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .media-card-description {
+      margin-top: 8px;
+      color: #444;
+      font-size: 0.88em;
+      line-height: 1.5;
+    }
+    .responsive-video {
+      width: min(92%, 560px);
+      margin: 1em auto 0;
+      aspect-ratio: 16 / 9;
+    }
+    .responsive-video iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .honors-list {
+      width: min(92%, 720px);
+      margin: 0 auto;
+    }
+    .honor-item {
+      display: grid;
+      grid-template-columns: clamp(3.4em, 9%, 4.5em) minmax(0, 1fr);
+      column-gap: 0.7em;
+      margin-bottom: 0.9em;
+    }
+    .honor-year {
+      padding-top: 0.05em;
+      white-space: nowrap;
+    }
+    .honor-details {
+      min-width: 0;
+    }
+    .honor-card {
+      width: min(100%, 560px);
+      margin-top: 0.75em;
+    }
+    .honor-card a {
+      display: block;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+    }
+    .honor-card a:hover {
+      text-decoration: none;
+    }
+    .honor-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .honor-card-text {
+      padding: 10px 12px;
+    }
+    .honor-card-source {
+      margin-bottom: 4px;
+      color: #666;
+      font-size: 0.75em;
+    }
+    .honor-card-title {
+      font-size: 0.95em;
+      font-weight: 700;
+      line-height: 1.35;
+    }
     .contact-actions {
       display: flex;
       flex-wrap: wrap;
@@ -110,25 +250,21 @@
       gap: 0.65em;
       margin-top: 0.15em;
     }
-
     .social-links {
       display: flex;
       align-items: center;
       gap: 0.18em;
     }
-
     .feedback-form {
       margin: 0;
       padding-left: 0.65em;
       border-left: 1px solid #d8d0df;
     }
-
     .feedback-buttons {
       display: flex;
       align-items: center;
       gap: 0.35em;
     }
-
     .feedback-button {
       width: 29px;
       height: 29px;
@@ -142,262 +278,275 @@
       line-height: 1;
       transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
     }
-
     .feedback-button:hover {
       border-color: #b8a9c9;
       background-color: #f4eff8;
     }
-
     .feedback-button:active {
       transform: translateY(1px);
       background-color: #ede7f6;
     }
-
     .feedback-button:disabled {
       cursor: default;
       opacity: 0.75;
     }
-
     .feedback-status {
       min-width: 1em;
       color: #666;
       font-size: 0.78em;
     }
-
     .site-footer {
       text-align: center;
       color: #777;
       font-size: 0.95em;
     }
+    @media (max-width: 620px) {
+      body {
+        width: min(calc(100% - 28px), 800px);
+        padding: 14px 0;
+      }
+      .site-header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+      .header-content {
+        width: 100%;
+      }
+      .header-top {
+        display: block;
+      }
+      .nav-responsive {
+        align-items: center;
+        padding-top: 0.75em;
+      }
+      .nav-row {
+        justify-content: center;
+      }
+      .honors-list {
+        width: 100%;
+      }
+      .honor-item {
+        grid-template-columns: 3.55em minmax(0, 1fr);
+        column-gap: 0.45em;
+      }
+      .feature-image,
+      .embedded-site,
+      .media-card,
+      .responsive-video {
+        width: 100%;
+      }
+    }
   </style>
 </head>
-
 <body>
-
-  <!-- Header using layout table with two-row nav aligned to header -->
-  <table style="width: 100%; border-collapse: collapse;">
-    <tr>
-      <td style="vertical-align: top;">
-        <img src="pictures/Chanh_small.png" alt="Chanh Bao Lam" class="profile-pic">
-      </td>
-
-      <td style="vertical-align: top;">
-        <table style="width: 100%; border-collapse: collapse;">
-          <tr>
-            <td style="text-align: left; vertical-align: top;">
-              <h1><b>Chanh Bao Lam, Ph.D.</b></h1>
-              <h3 class="ipa">
-                Pronunciation: /cɑːɲ-bɑʊ-ləm/
-                <a href="https://www.name-coach.com/chanhlam" target="_blank">
-                  <img src="pictures/icon_namecoach.png" alt="Namecoach" style="height: 20px; vertical-align: middle;">
-                </a>
-              </h3>
-
-              <!-- CV download button -->
-              <div style="margin-top: 0.3em;">
-                <a href="pictures/cblam_cv_web.pdf" target="_blank"
-                  style="background-color: #ede7f6; color: #512888; padding: 4px 10px;
-                          border-radius: 3px; text-decoration: none; font-size: 0.8em; font-weight: normal;">
-                  Curriculum Vitae
-                </a>
-              </div>
-            </td>
-
-            <td style="text-align: right; vertical-align: top; padding-top: 28px;">
-              <nav class="nav-responsive">
-                <div class="nav-row">
-                  <a href="#research">Research</a>
-                  <a href="#teaching">Teaching</a>
-                  <a href="#services">Service</a>
-                </div>
-                <div class="nav-row">
-                  <a href="#public">Impact</a>
-                  <a href="#contact">Contact</a>
-                </div>
-              </nav>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-
+  <!-- Header -->
+  <header class="site-header">
+    <img src="pictures/Chanh_small.png" alt="Chanh Bao Lam" class="profile-pic">
+<div class="header-content">
+  <div class="header-top">
+    <div>
+      <h1><b>Chanh Bao Lam, Ph.D.</b></h1>
+      <h3 class="ipa">
+        Pronunciation: /cɑːɲ-bɑʊ-ləm/
+        <a href="https://www.name-coach.com/chanhlam" target="_blank" rel="noopener">
+          <img src="pictures/icon_namecoach.png" alt="Namecoach" style="height: 20px; vertical-align: middle;">
+        </a>
+      </h3>
+      <a href="pictures/cblam_cv_web.pdf" target="_blank" class="cv-button">
+        Curriculum Vitae
+      </a>
+    </div>
+    <nav class="nav-responsive" aria-label="Main navigation">
+      <div class="nav-row">
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#services">Service</a>
+      </div>
+      <div class="nav-row">
+        <a href="#public">Impact</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</div>
+  </header>
   <!-- About -->
   <h2>About</h2>
-  <p>I am an Assistant Professor and Accreditation Analyst in the Department of Curriculum and Instruction, College of Education, <a href="https://www.k-state.edu/" target="_blank">Kansas State University</a>.</p>
-          
-  <p>I am originally from <a href="https://maps.app.goo.gl/Rfg53xKahDrPWZmKA" target="_blank">Phu Yen, Vietnam</a>. I earned a bachelor's degree in Mathematics Education from <a href="https://hcmue.edu.vn/en/" target="_blank">Ho Chi Minh City University of Education</a>, and master's and doctoral degrees in Curriculum and Instruction from K-State.</p>
-
-  <p>My work focuses on sustaining the educator workforce and improving conditions that support educators and school systems.</p>
-          
-  <p>I also enjoy traveling the world and learning about the histories and cultures of the places I visit. Below is a photo from one of my favorite experiences.</p>
-
-  <div style="text-align: center; margin-top: 2em;">
-    <img src="pictures/Stonehenge.jpeg" alt="Stonehenge visit" style="max-width: 90%; height: auto; border: 1px solid #ccc; border-radius: 8px;">
-    <p style="font-size: 0.9em; color: #555; margin-top: 0.5em;"><i>Stonehenge, summer 2023 - UNESCO World Heritage Site and iconic prehistoric monument.</i></p>
+  <p>
+    I am an Assistant Professor and Accreditation Analyst in the Department of Curriculum and Instruction, College of Education,
+    <a href="https://www.k-state.edu/" target="_blank" rel="noopener">Kansas State University</a>.
+  </p>
+  <p>
+    I am originally from
+    <a href="https://maps.app.goo.gl/Rfg53xKahDrPWZmKA" target="_blank" rel="noopener">Phu Yen, Vietnam</a>.
+    I earned a bachelor's degree in Mathematics Education from
+    <a href="https://hcmue.edu.vn/en/" target="_blank" rel="noopener">Ho Chi Minh City University of Education</a>,
+    and master's and doctoral degrees in Curriculum and Instruction from K-State.
+  </p>
+  <p>
+    My work focuses on sustaining the educator workforce and improving conditions that support educators and school systems.
+  </p>
+  <p>
+    I also enjoy traveling the world and learning about the histories and cultures of the places I visit. Below is a photo from one of my favorite experiences.
+  </p>
+  <div style="margin-top: 2em;">
+    <img src="pictures/Stonehenge.jpeg" alt="Stonehenge visit" class="feature-image">
+    <p class="image-caption">
+      <i>Stonehenge, summer 2023 - UNESCO World Heritage Site and iconic prehistoric monument.</i>
+    </p>
   </div>
-
   <!-- Research -->
   <h2 id="research">Research</h2>
-  <p>My research interests include teacher education, teacher workforce and labor markets, and teacher labor activism.</p>
-
+  <p>
+    My research interests include teacher education, teacher workforce and labor markets, and teacher labor activism.
+  </p>
   <h3>Peer-Reviewed Publications</h3>
   <ul>
     <li>
       <b>Lam, C. B.</b>, Liu, Y., Anglum, J. C., &amp; Nguyen, T. D. (2025). STEM teacher characteristics and mobility: Longitudinal evidence from the American Midwest, 2010 through 2023. <i>Journal of Research in Science Teaching, 62</i>(7), 1743-1763.
-      <a href="https://doi.org/10.1002/tea.22024" target="_blank">https://doi.org/10.1002/tea.22024</a>
+      <a href="https://doi.org/10.1002/tea.22024" target="_blank" rel="noopener">https://doi.org/10.1002/tea.22024</a>
     </li>
-    <li>
-      Nguyen, T. D., <b>Lam, C. B.</b>, &amp; Bruno, P. (2024). What do we know about the extent of teacher shortages nationwide? <i>AERA Open, 10</i>(1), 1-18.
-      <a href="https://doi.org/10.1177/23328584241276512" target="_blank">https://doi.org/10.1177/23328584241276512</a>
-    </li>
+<li>
+  Nguyen, T. D., <b>Lam, C. B.</b>, &amp; Bruno, P. (2024). What do we know about the extent of teacher shortages nationwide? <i>AERA Open, 10</i>(1), 1-18.
+  <a href="https://doi.org/10.1177/23328584241276512" target="_blank" rel="noopener">https://doi.org/10.1177/23328584241276512</a>
+</li>
   </ul>
-
   <h3>Professional Journals</h3>
   <ul>
     <li>
       Liu, Y., <b>Lam, C. B.</b>, Anglum, J. C., &amp; Nguyen, T. D. (2025). New teachers in rural America. <i>Phi Delta Kappan, 107</i>(1-2), 28-35.
-      <a href="https://kappanonline.org/new-teachers-in-rural-america/" target="_blank">https://kappanonline.org/new-teachers-in-rural-america</a>
+      <a href="https://kappanonline.org/new-teachers-in-rural-america/" target="_blank" rel="noopener">https://kappanonline.org/new-teachers-in-rural-america</a>
     </li>
   </ul>
-
   <h3>Working Papers</h3>
   <ul>
     <li>
       Bruno, P., Nguyen, T. D., Kim, H., <b>Lam, C. B.</b>, Pérez, M. S., Hur, J., &amp; Lewis, C. M. (2025).
       <i>The effects of K-12 computer science education policies on postsecondary CS participation</i> (EdWorkingPaper: 25-1301). Annenberg Institute at Brown University.
-      <a href="https://edworkingpapers.com/ai25-1301" target="_blank">https://edworkingpapers.com/ai25-1301</a>
+      <a href="https://edworkingpapers.com/ai25-1301" target="_blank" rel="noopener">https://edworkingpapers.com/ai25-1301</a>
     </li>
-    <li>
-      Liu, Y., <b>Lam, C. B.</b>, Anglum, J. C., Funk, J. R., &amp; Nguyen, T. D. (2025).
-      <i>Revisiting the rural teacher workforce: Insights from a novel rurality measure</i> (EdWorkingPaper: 25-1231). Annenberg Institute at Brown University.
-      <a href="https://edworkingpapers.com/ai25-1231" target="_blank">https://edworkingpapers.com/ai25-1231</a>
-    </li>
-    <li>
-      Nguyen, T. D., <b>Lam, C. B.</b>, &amp; Bruno, P. (2022).
-      <i>Is there a national teacher shortage?</i> (EdWorkingPaper: 22-631). Annenberg Institute at Brown University.
-      <a href="https://doi.org/10.26300/76eq-hj32" target="_blank">https://doi.org/10.26300/76eq-hj32</a>
-    </li>
+<li>
+  Liu, Y., <b>Lam, C. B.</b>, Anglum, J. C., Funk, J. R., &amp; Nguyen, T. D. (2025).
+  <i>Revisiting the rural teacher workforce: Insights from a novel rurality measure</i> (EdWorkingPaper: 25-1231). Annenberg Institute at Brown University.
+  <a href="https://edworkingpapers.com/ai25-1231" target="_blank" rel="noopener">https://edworkingpapers.com/ai25-1231</a>
+</li>
+<li>
+  Nguyen, T. D., <b>Lam, C. B.</b>, &amp; Bruno, P. (2022).
+  <i>Is there a national teacher shortage?</i> (EdWorkingPaper: 22-631). Annenberg Institute at Brown University.
+  <a href="https://doi.org/10.26300/76eq-hj32" target="_blank" rel="noopener">https://doi.org/10.26300/76eq-hj32</a>
+</li>
   </ul>
-
   <h3>National Research Conferences</h3>
   <ul>
     <li>
       <b>Lam, C. B.</b> (2026, April 8-12). <i>Teacher attrition amid geographical, societal, and economic realities: Fifteen years of the Kansas teacher workforce</i> [Paper presentation]. American Educational Research Association (AERA) Annual Meeting, Los Angeles, CA, United States.
     </li>
-    <li>
-      Liu, Y., <b>Lam, C. B.</b>, Anglum, J. C., Funk, J. R., &amp; Nguyen, T. D. (2026, April 8-12). <i>Revisiting the rural teacher workforce: Insights from a novel rurality measure</i> [Paper presentation]. American Educational Research Association (AERA) Annual Meeting, Los Angeles, CA, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b> (2026, March 19-21). <i>Teacher attrition amid geographical, societal, and economic realities: Fifteen years of the Kansas teacher workforce</i> [Poster presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Chicago, IL, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b> (2025, November 13-15). <i>Teacher attrition amid geographical, societal, and economic realities: Fifteen years of the Kansas teacher workforce</i> [Poster presentation]. Association for Public Policy Analysis &amp; Management (APPAM) Fall Research Conference, Seattle, WA, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b>, Liu, Y., Anglum, J. C., &amp; Nguyen, T. D. (2025, April 23-27). <i>STEM teacher characteristics and mobility in the American Midwest</i> [Roundtable presentation]. American Educational Research Association (AERA) Annual Meeting, Denver, CO, United States.
-    </li>
-    <li>
-      Liu, Y., <b>Lam, C. B.</b>, Anglum, J. C., &amp; Nguyen, T. D. (2025, March 13-15). <i>Revisiting rural teacher workforce: Insights from a novel rurality measure</i> [Poster presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Washington, D.C., United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b>, Liu, Y., Anglum, J. C., &amp; Nguyen, T. D. (2025, March 13-15). <i>STEM teacher characteristics and mobility in the American Midwest</i> [Paper presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Washington, D.C., United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b>, Liu, Y., Anglum, J. C., &amp; Nguyen, T. D. (2024, November 21-23). <i>STEM teacher characteristics and mobility in the American Midwest</i> [Paper presentation]. Association for Public Policy Analysis &amp; Management (APPAM) Fall Research Conference, National Harbor, MD, United States.
-    </li>
-    <li>
-      Nguyen, T. D., <b>Lam, C. B.</b>, &amp; Bruno, P. (2023, March 23-25). <i>Is there a national teacher shortage? A systematic examination of reports of teacher shortages in the United States</i> [Paper presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Denver, CO, United States.
-    </li>
-    <li>
-      Nguyen, T. D., Rodriguez, L. A., <b>Lam, C. B.</b>, &amp; Angeles, C. L. (2022, April 21-26). <i>Causes and consequences of contemporary teacher strikes: A systematic review of research on pre-K-12 teacher activism in the United States</i> [Paper presentation]. American Educational Research Association (AERA) Annual Meeting, San Diego, CA, United States.
-    </li>
-    <li>
-      Nguyen, T. D., Rodriguez, L. A., <b>Lam, C. B.</b>, &amp; Angeles, C. L. (2022, March 17-19). <i>Causes and consequences of contemporary teacher strikes: A systematic review of research on pre-K-12 teacher activism in the United States</i> [Paper presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Denver, CO, United States.
-    </li>
+<li>
+  Liu, Y., <b>Lam, C. B.</b>, Anglum, J. C., Funk, J. R., &amp; Nguyen, T. D. (2026, April 8-12). <i>Revisiting the rural teacher workforce: Insights from a novel rurality measure</i> [Paper presentation]. American Educational Research Association (AERA) Annual Meeting, Los Angeles, CA, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b> (2026, March 19-21). <i>Teacher attrition amid geographical, societal, and economic realities: Fifteen years of the Kansas teacher workforce</i> [Poster presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Chicago, IL, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b> (2025, November 13-15). <i>Teacher attrition amid geographical, societal, and economic realities: Fifteen years of the Kansas teacher workforce</i> [Poster presentation]. Association for Public Policy Analysis &amp; Management (APPAM) Fall Research Conference, Seattle, WA, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b>, Liu, Y., Anglum, J. C., &amp; Nguyen, T. D. (2025, April 23-27). <i>STEM teacher characteristics and mobility in the American Midwest</i> [Roundtable presentation]. American Educational Research Association (AERA) Annual Meeting, Denver, CO, United States.
+</li>
+<li>
+  Liu, Y., <b>Lam, C. B.</b>, Anglum, J. C., &amp; Nguyen, T. D. (2025, March 13-15). <i>Revisiting rural teacher workforce: Insights from a novel rurality measure</i> [Poster presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Washington, D.C., United States.
+</li>
+<li>
+  <b>Lam, C. B.</b>, Liu, Y., Anglum, J. C., &amp; Nguyen, T. D. (2025, March 13-15). <i>STEM teacher characteristics and mobility in the American Midwest</i> [Paper presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Washington, D.C., United States.
+</li>
+<li>
+  <b>Lam, C. B.</b>, Liu, Y., Anglum, J. C., &amp; Nguyen, T. D. (2024, November 21-23). <i>STEM teacher characteristics and mobility in the American Midwest</i> [Paper presentation]. Association for Public Policy Analysis &amp; Management (APPAM) Fall Research Conference, National Harbor, MD, United States.
+</li>
+<li>
+  Nguyen, T. D., <b>Lam, C. B.</b>, &amp; Bruno, P. (2023, March 23-25). <i>Is there a national teacher shortage? A systematic examination of reports of teacher shortages in the United States</i> [Paper presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Denver, CO, United States.
+</li>
+<li>
+  Nguyen, T. D., Rodriguez, L. A., <b>Lam, C. B.</b>, &amp; Angeles, C. L. (2022, April 21-26). <i>Causes and consequences of contemporary teacher strikes: A systematic review of research on pre-K-12 teacher activism in the United States</i> [Paper presentation]. American Educational Research Association (AERA) Annual Meeting, San Diego, CA, United States.
+</li>
+<li>
+  Nguyen, T. D., Rodriguez, L. A., <b>Lam, C. B.</b>, &amp; Angeles, C. L. (2022, March 17-19). <i>Causes and consequences of contemporary teacher strikes: A systematic review of research on pre-K-12 teacher activism in the United States</i> [Paper presentation]. Association for Education Finance and Policy (AEFP) Annual Conference, Denver, CO, United States.
+</li>
   </ul>
-
   <h3>Regional Research Conferences</h3>
   <ul>
     <li>
       <b>Lam, C. B.</b> (2025, April 4). <i>Kansas teacher retention challenges: A 15-year perspective</i> [Paper presentation]. Kansas Association of Teacher Educators (ATE-K), Manhattan, KS, United States.
     </li>
-    <li>
-      <b>Lam, C. B.</b> (2023, July 17-19). <i>Teacher attrition in the State of Kansas</i> [Paper presentation]. Oxford Education Research Symposium, Oxford, England, United Kingdom.
-    </li>
+<li>
+  <b>Lam, C. B.</b> (2023, July 17-19). <i>Teacher attrition in the State of Kansas</i> [Paper presentation]. Oxford Education Research Symposium, Oxford, England, United Kingdom.
+</li>
   </ul>
-
   <h3>Invited Talks and Seminars</h3>
   <ul>
     <li>
       <b>Lam, C. B.</b> (2026, May 21). <i>Teacher attrition amid geographical, societal, and economic realities: Fifteen years of the Kansas teacher workforce</i> [Invited webinar]. American Association of Colleges for Teacher Education (AACTE) On-Demand Webinar Series.
     </li>
-    <li>
-      <b>Lam, C. B.</b> (2025, April 3). <i>The Vietnamese education system</i> [Guest lecture]. EDCI 311 - Current Issues in Education: Global Perspective, Spring 2025, Kansas State University, Manhattan, KS, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b> (2025, March 12). <i>Teacher attrition in the midst of geographical, societal, and economic realities: Insights from fifteen years of the Kansas teacher workforce</i> [Seminar presentation]. Quantitative Working Group, Department of Education Policy, Organization, and Leadership (EPOL Quant), University of Illinois, Champaign, IL, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b> (2024, June 12). <i>Schools in Vietnam</i> [Poster presentation]. Education Around the World, Summer GEO Camp, Kansas State University, Manhattan, KS, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b> (2024, April 16). <i>Vietnam's school systems</i> [Guest lecture]. EDCI 311 - Current Issues in Education: Global Perspective, Spring 2024, Kansas State University, Manhattan, KS, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b> (2023, November 8). <i>Data practices and analytics</i> [Seminar presentation]. Project CAMINO (Kansas State University-Universidad Laica Eloy Alfaro de Manabí Partnership), Manhattan, KS, United States.
-    </li>
-    <li>
-      <b>Lam, C. B.</b> (2022, June 3-4). <i>Reading and interpreting data</i> [Workshop presentation]. Noyce Workshop on Data-Driven Decision Making, Manhattan, KS, United States.
-    </li>
+<li>
+  <b>Lam, C. B.</b> (2025, April 3). <i>The Vietnamese education system</i> [Guest lecture]. EDCI 311 - Current Issues in Education: Global Perspective, Spring 2025, Kansas State University, Manhattan, KS, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b> (2025, March 12). <i>Teacher attrition in the midst of geographical, societal, and economic realities: Insights from fifteen years of the Kansas teacher workforce</i> [Seminar presentation]. Quantitative Working Group, Department of Education Policy, Organization, and Leadership (EPOL Quant), University of Illinois, Champaign, IL, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b> (2024, June 12). <i>Schools in Vietnam</i> [Poster presentation]. Education Around the World, Summer GEO Camp, Kansas State University, Manhattan, KS, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b> (2024, April 16). <i>Vietnam's school systems</i> [Guest lecture]. EDCI 311 - Current Issues in Education: Global Perspective, Spring 2024, Kansas State University, Manhattan, KS, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b> (2023, November 8). <i>Data practices and analytics</i> [Seminar presentation]. Project CAMINO (Kansas State University-Universidad Laica Eloy Alfaro de Manabí Partnership), Manhattan, KS, United States.
+</li>
+<li>
+  <b>Lam, C. B.</b> (2022, June 3-4). <i>Reading and interpreting data</i> [Workshop presentation]. Noyce Workshop on Data-Driven Decision Making, Manhattan, KS, United States.
+</li>
   </ul>
-
   <h3>Other Research Output</h3>
   <p>
     In addition to publications and presentations, I contribute to the <i>US Teacher Shortages</i> project, a publicly available dataset maintained with Dr. Tuan Nguyen (University of Missouri) and other colleagues. The project systematically documents state-level teacher vacancies, underqualification, preparation, and turnover across the U.S. It is designed to provide policymakers, researchers, and the public with timely information about staffing challenges across the nation's teacher workforce.
   </p>
-
   <ul>
     <li>
-      <i>US Teacher Shortages</i>. (n.d.). [Dataset]. <a href="https://teachershortages.com" target="_blank">https://teachershortages.com</a>
+      <i>US Teacher Shortages</i>. (n.d.). [Dataset].
+      <a href="https://teachershortages.com" target="_blank" rel="noopener">https://teachershortages.com</a>
     </li>
   </ul>
-
-  <div style="text-align: center; margin-top: 1em;">
   <iframe
     src="https://teachershortages.com/"
     title="US Teacher Shortages"
-    style="width: 90%; height: 350px; border: 1px solid #ccc; border-radius: 8px;"
+    class="embedded-site"
     loading="lazy">
   </iframe>
-</div>
-
   <!-- Teaching -->
   <h2 id="teaching">Teaching</h2>
-  <p>I teach undergraduate and graduate courses in data analysis and quantitative research methods, with an emphasis on applications in educational settings.</p>
-
+  <p>
+    I teach undergraduate and graduate courses in data analysis and quantitative research methods, with an emphasis on applications in educational settings.
+  </p>
   <ul>
     <li>
-      <strong><a href="https://catalog.k-state.edu/preview_course.php?catoid=62&coid=434113&print" target="_blank">EDCI 514 - Leveraging Data in Educational Settings</a></strong> (3 credits)<br>
+      <strong><a href="https://catalog.k-state.edu/preview_course.php?catoid=62&coid=434113&print" target="_blank" rel="noopener">EDCI 514 - Leveraging Data in Educational Settings</a></strong> (3 credits)<br>
       This course offers foundational understandings of data in education, introducing contemporary concepts such as big data and the emerging field of educational data. Topics include recent applications of big data, four major types of educational data (input, outcome, process, and satisfaction), common pitfalls in data interpretation, and strategies for ethical and effective data use in educational settings.
     </li>
-    <li>
-      <strong><a href="https://catalog.k-state.edu/preview_course.php?catoid=63&coid=440093&print" target="_blank">EDCI 913 - Inquiry I: Statistical Analysis in Curriculum and Instruction</a></strong> (3 credits)<br>
-      This course provides an introduction to statistics and statistical analysis in education. Topics include basic statistical concepts, probability distributions, hypothesis testing, correlation, and simple regression. The course focuses on helping students understand these foundational concepts and procedures, thus enabling them to critically interpret data and statistical results in educational contexts.
-    </li>
-    <li>
-      <strong><a href="https://catalog.k-state.edu/preview_course.php?catoid=63&coid=440096&print" target="_blank">EDCI 917 - Inquiry IV: Advanced Quantitative Methods in Curriculum and Instruction</a></strong> (3 credits)<br>
-      This advanced course in quantitative analysis equips students with the knowledge, skills, and dispositions needed to use quantitative data and statistical analysis responsibly for educational research and decision-making. Topics include scalable data management, data curation, regression analysis, and data visualization, with an emphasis on ethically interpreting and effectively communicating research findings to inform policy and practice. The course is designed for students who intend to apply quantitative methods in their research and professional work.
-    </li>
+<li>
+  <strong><a href="https://catalog.k-state.edu/preview_course.php?catoid=63&coid=440093&print" target="_blank" rel="noopener">EDCI 913 - Inquiry I: Statistical Analysis in Curriculum and Instruction</a></strong> (3 credits)<br>
+  This course provides an introduction to statistics and statistical analysis in education. Topics include basic statistical concepts, probability distributions, hypothesis testing, correlation, and simple regression. The course focuses on helping students understand these foundational concepts and procedures, thus enabling them to critically interpret data and statistical results in educational contexts.
+</li>
+<li>
+  <strong><a href="https://catalog.k-state.edu/preview_course.php?catoid=63&coid=440096&print" target="_blank" rel="noopener">EDCI 917 - Inquiry IV: Advanced Quantitative Methods in Curriculum and Instruction</a></strong> (3 credits)<br>
+  This advanced course in quantitative analysis equips students with the knowledge, skills, and dispositions needed to use quantitative data and statistical analysis responsibly for educational research and decision-making. Topics include scalable data management, data curation, regression analysis, and data visualization, with an emphasis on ethically interpreting and effectively communicating research findings to inform policy and practice. The course is designed for students who intend to apply quantitative methods in their research and professional work.
+</li>
   </ul>
-
   <!-- Service -->
   <h2 id="services">Service</h2>
-
   <h3>Editorial and Peer Review</h3>
-
-  <p>I serve in editorial roles and as a manuscript referee for several peer-reviewed journals in education research and policy.</p>
-
+  <p>
+    I serve in editorial roles and as a manuscript referee for several peer-reviewed journals in education research and policy.
+  </p>
   <ul>
     <li>Editorial Board Member, <i>Journal of Research in Rural Education</i> (2026-present)</li>
     <li>Assistant Editor, <i>Online Journal of Rural Research and Policy</i> (2021-present)</li>
@@ -406,237 +555,243 @@
     <li>Manuscript Referee, <i>Journal of Research in Rural Education</i> (2026-present)</li>
     <li>Manuscript Referee, <i>Teaching and Teacher Education</i> (2026-present)</li>
   </ul>
-
   <h3>Program Review and Accreditation</h3>
-
-  <p>I support program review and accreditation efforts for the K-State College of Education. Following the most recent accreditation review in spring 2023, the college received the <a href="https://caepnet.org/frank-murray-leadership-awards/" target="_blank">2024 Frank Murray Leadership Recognition for Continuous Improvement</a>.</p>
-  
-  <p>I also serve on national and state review teams and participate in university committees related to educator preparation accreditation.</p>
-
+  <p>
+    I support program review and accreditation efforts for the K-State College of Education. Following the most recent accreditation review in spring 2023, the college received the
+    <a href="https://caepnet.org/frank-murray-leadership-awards/" target="_blank" rel="noopener">2024 Frank Murray Leadership Recognition for Continuous Improvement</a>.
+  </p>
+  <p>
+    I also serve on national and state review teams and participate in university committees related to educator preparation accreditation.
+  </p>
   <ul>
-    <li>Site Visitor, <a href="https://caepnet.org/" target="_blank">Council for the Accreditation of Educator Preparation (CAEP)</a> (2023-present)</li>
-    <li>Program Reviewer, <a href="https://www.ksde.gov/" target="_blank">Kansas State Department of Education (KSDE)</a> (2023-present)</li>
+    <li>Site Visitor, <a href="https://caepnet.org/" target="_blank" rel="noopener">Council for the Accreditation of Educator Preparation (CAEP)</a> (2023-present)</li>
+    <li>Program Reviewer, <a href="https://www.ksde.gov/" target="_blank" rel="noopener">Kansas State Department of Education (KSDE)</a> (2023-present)</li>
     <li>Member, Program Quality Assurance Committee (PQAC), College of Education, Kansas State University (2023-present)</li>
     <li>Member, Program Coordinators Committee (PCC), College of Education, Kansas State University (2023-present)</li>
   </ul>
-
-  <p>My areas of expertise include CAEP sufficiency of EPP-created assessments, educational technology, quality assurance systems, stakeholder engagement, and continuous improvement. Below are some white papers I authored or co-authored for accreditation review:</p>
-
+  <p>
+    My areas of expertise include CAEP sufficiency of EPP-created assessments, educational technology, quality assurance systems, stakeholder engagement, and continuous improvement. Below are some white papers I authored or co-authored for accreditation review:
+  </p>
   <ul>
     <li><b>Lam, C. B.</b>, &amp; Cox, R. (2023). Educational technology in teacher preparation: A systematic review of EPP practices. <i>Self-study addendum report</i>. Kansas State University.</li>
     <li><b>Lam, C. B.</b> (2023). KSU Student Teacher Final Evaluation validity and reliability study: A white paper. <i>Self-study addendum report</i>. Kansas State University.</li>
     <li><b>Lam, C. B.</b> (2023). The COE Dispositions: An updated validity and reliability study. <i>Self-study addendum report</i>. Kansas State University.</li>
     <li><b>Lam, C. B.</b> (2023). The KSU Student Intern Portfolio: An updated assessment of the instrument's reliability. <i>Self-study addendum report</i>. Kansas State University.</li>
   </ul>
-
   <!-- Impact -->
   <h2 id="public">Selected Policy Influences</h2>
   <ul>
-    <li>Edwards, K. A. (2023, September). <i>Child care since the pandemic: Macroeconomic impacts of public policy measures</i> [Testimony before the Senate Subcommittee on Economic Policy]. <a href="https://www.banking.senate.gov/imo/media/doc/edwards_testimony_9-20-23.pdf" target="_blank">https://www.banking.senate.gov/imo/media/doc/edwards_testimony_9-20-23.pdf</a></li>
-    <li>The Council of Economic Advisers. (2023, March). <i>Economic report of the President</i>. <a href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/03/ERP-2023.pdf" target="_blank">https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/03/ERP-2023.pdf</a></li>
+    <li>
+      Edwards, K. A. (2023, September). <i>Child care since the pandemic: Macroeconomic impacts of public policy measures</i> [Testimony before the Senate Subcommittee on Economic Policy].
+      <a href="https://www.banking.senate.gov/imo/media/doc/edwards_testimony_9-20-23.pdf" target="_blank" rel="noopener">https://www.banking.senate.gov/imo/media/doc/edwards_testimony_9-20-23.pdf</a>
+    </li>
+<li>
+  The Council of Economic Advisers. (2023, March). <i>Economic report of the President</i>.
+  <a href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/03/ERP-2023.pdf" target="_blank" rel="noopener">https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/03/ERP-2023.pdf</a>
+</li>
   </ul>
-
   <h2>Selected Media Appearances</h2>
   <ul>
     <li>
       Boragine, E. (2026, May 1). What changes when the data gets personal. <i>K-State Today</i>.
-      <a href="https://www.k-state.edu/news/articles/2026/05/chanh-bao-lam-kansas-teacher-retention.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_content=What%20changes%20when%20the%20data%20gets%20personal&amp;utm_campaign=KST%20Faculty/Staff%205-1-26" target="_blank">https://www.k-state.edu/news/articles/2026/05/chanh-bao-lam-kansas-teacher-retention.html</a>
-
-      <div style="text-align: center; margin-top: 1em;">
-        <a href="https://www.k-state.edu/news/articles/2026/05/chanh-bao-lam-kansas-teacher-retention.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_content=What%20changes%20when%20the%20data%20gets%20personal&amp;utm_campaign=KST%20Faculty/Staff%205-1-26"
-          target="_blank"
-          style="display: inline-block; width: 70%; max-width: 520px; text-align: left; border: 1px solid #512888; border-radius: 12px; overflow: hidden; background: #fff; text-decoration: none; color: inherit;">
-
-          <div style="background: #512888; color: #fff; padding: 8px 14px; font-size: 0.85em; font-weight: 700;">
-            K-State Today
-          </div>
-
-          <div style="padding: 14px 16px;">
-            <div style="font-size: 1em; font-weight: 700; line-height: 1.35; color: #222;">
-              What changes when the data gets personal
-            </div>
-
-            <div style="font-size: 0.88em; color: #444; line-height: 1.5; margin-top: 8px;">
-              Chanh Bao Lam is asking more useful questions about teacher retention: What works for this school, this community and these teachers?
-            </div>
-          </div>
-        </a>
+      <a href="https://www.k-state.edu/news/articles/2026/05/chanh-bao-lam-kansas-teacher-retention.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_content=What%20changes%20when%20the%20data%20gets%20personal&amp;utm_campaign=KST%20Faculty/Staff%205-1-26" target="_blank" rel="noopener">https://www.k-state.edu/news/articles/2026/05/chanh-bao-lam-kansas-teacher-retention.html</a>
+  <a href="https://www.k-state.edu/news/articles/2026/05/chanh-bao-lam-kansas-teacher-retention.html?utm_source=newsletter&amp;utm_medium=email&amp;utm_content=What%20changes%20when%20the%20data%20gets%20personal&amp;utm_campaign=KST%20Faculty/Staff%205-1-26"
+    target="_blank"
+    rel="noopener"
+    class="media-card">
+    <div class="media-card-band">
+      K-State Today
+    </div>
+    <div class="media-card-content">
+      <div class="media-card-title">
+        What changes when the data gets personal
       </div>
-    </li>
-
-    <li>
-      Council for the Accreditation of Educator Preparation. (2024, October 17). <i>Kansas State interview at CAEPCon Fall 2024</i> [Video].
-      <a href="https://www.youtube.com/watch?v=TpTp4P87U5Q" target="_blank">https://www.youtube.com/watch?v=TpTp4P87U5Q</a>
-      <div style="text-align: center; margin-top: 1em;">
-        <iframe width="70%" height="315" src="https://www.youtube.com/embed/TpTp4P87U5Q" title="CAEPCon Fall 2024 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="media-card-description">
+        Chanh Bao Lam is asking more useful questions about teacher retention: What works for this school, this community and these teachers?
       </div>
-    </li>
-
-    <li>Greene, P. (2024, September 30). Which states are having the most trouble filling teaching positions. <i>Forbes</i>. <a href="https://www.forbes.com/sites/petergreene/2024/09/30/which-states-are-having-the-most-trouble-filling-teaching-positions/" target="_blank">https://www.forbes.com/sites/petergreene/2024/09/30/which-states-are-having-the-most-trouble-filling-teaching-positions/</a></li>
-
-    <li>Cardoza, K. (2023, October 26). This teacher shortage solution has gone viral. But does it work? <i>NPR</i>. <a href="https://www.npr.org/2023/10/26/1207073068/grow-your-own-teacher-solution-research" target="_blank">https://www.npr.org/2023/10/26/1207073068/grow-your-own-teacher-solution-research</a></li>
-
-    <li>Edsall, T. B. (2022, December 14). There's a reason there aren't enough teachers in America. Many reasons, actually. <i>The New York Times</i>. <a href="https://www.nytimes.com/2022/12/14/opinion/teacher-shortage-education.html" target="_blank">https://www.nytimes.com/2022/12/14/opinion/teacher-shortage-education.html</a></li>
-
-    <li>Neary, M. (2022, August 25). K-State researchers explore teacher shortages - along with lack of data. <i>The Mercury</i>. <a href="https://themercury.com/news/education/k-state-researchers-explore-teacher-shortages-along-with-lack-of-data/article_5d1e1552-86ad-5a44-8229-fae48bffa61f.html" target="_blank">https://themercury.com/news/education/k-state-researchers-explore-teacher-shortages-along-with-lack-of-data/article_5d1e1552-86ad-5a44-8229-fae48bffa61f.html</a></li>
-
-    <li>America’s new “national teacher shortage” is neither new nor national. (2022, August 21). <i>The Economist</i>. <a href="https://www.economist.com/united-states/2022/08/21/americas-new-national-teacher-shortage-is-neither-new-nor-national" target="_blank">https://www.economist.com/united-states/2022/08/21/americas-new-national-teacher-shortage-is-neither-new-nor-national</a></li>
+    </div>
+  </a>
+</li>
+<li>
+  Council for the Accreditation of Educator Preparation. (2024, October 17). <i>Kansas State interview at CAEPCon Fall 2024</i> [Video].
+  <a href="https://www.youtube.com/watch?v=TpTp4P87U5Q" target="_blank" rel="noopener">https://www.youtube.com/watch?v=TpTp4P87U5Q</a>
+  <div class="responsive-video">
+    <iframe
+      src="https://www.youtube.com/embed/TpTp4P87U5Q"
+      title="CAEPCon Fall 2024 Video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</li>
+<li>
+  Greene, P. (2024, September 30). Which states are having the most trouble filling teaching positions. <i>Forbes</i>.
+  <a href="https://www.forbes.com/sites/petergreene/2024/09/30/which-states-are-having-the-most-trouble-filling-teaching-positions/" target="_blank" rel="noopener">https://www.forbes.com/sites/petergreene/2024/09/30/which-states-are-having-the-most-trouble-filling-teaching-positions/</a>
+</li>
+<li>
+  Cardoza, K. (2023, October 26). This teacher shortage solution has gone viral. But does it work? <i>NPR</i>.
+  <a href="https://www.npr.org/2023/10/26/1207073068/grow-your-own-teacher-solution-research" target="_blank" rel="noopener">https://www.npr.org/2023/10/26/1207073068/grow-your-own-teacher-solution-research</a>
+</li>
+<li>
+  Edsall, T. B. (2022, December 14). There's a reason there aren't enough teachers in America. Many reasons, actually. <i>The New York Times</i>.
+  <a href="https://www.nytimes.com/2022/12/14/opinion/teacher-shortage-education.html" target="_blank" rel="noopener">https://www.nytimes.com/2022/12/14/opinion/teacher-shortage-education.html</a>
+</li>
+<li>
+  Neary, M. (2022, August 25). K-State researchers explore teacher shortages - along with lack of data. <i>The Mercury</i>.
+  <a href="https://themercury.com/news/education/k-state-researchers-explore-teacher-shortages-along-with-lack-of-data/article_5d1e1552-86ad-5a44-8229-fae48bffa61f.html" target="_blank" rel="noopener">https://themercury.com/news/education/k-state-researchers-explore-teacher-shortages-along-with-lack-of-data/article_5d1e1552-86ad-5a44-8229-fae48bffa61f.html</a>
+</li>
+<li>
+  America’s new “national teacher shortage” is neither new nor national. (2022, August 21). <i>The Economist</i>.
+  <a href="https://www.economist.com/united-states/2022/08/21/americas-new-national-teacher-shortage-is-neither-new-nor-national" target="_blank" rel="noopener">https://www.economist.com/united-states/2022/08/21/americas-new-national-teacher-shortage-is-neither-new-nor-national</a>
+</li>
   </ul>
-
   <!-- Honors -->
   <h2>Selected Honors and Awards</h2>
-
-  <table style="border-collapse: collapse; line-height: 1.6; margin-left: 1.25em;">
-    <tbody>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2026 &nbsp;</td>
-        <td style="padding-bottom: 1em;">
-          <i>James D. Anderson Outstanding Dissertation Award</i><br>
-          American Association of Colleges for Teacher Education (AACTE)
-
-          <div style="margin-top: 0.75em; max-width: 520px;">
-            <a href="https://edprepmatters.aacte.org/kansas-state-university-s-chanh-lam-named-2026-aacte-james-d-anderson-outstanding-dissertation-award-winner/"
-              target="_blank"
-              style="display: block; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; background: #fff; text-decoration: none; color: inherit;">
-
-              <img src="pictures/Dissertation-2026-Award-600x338.png"
-                  alt="2026 AACTE James D. Anderson Outstanding Dissertation Award"
-                  style="display: block; width: 100%; height: auto;">
-
-              <div style="padding: 10px 12px;">
-                <div style="font-size: 0.75em; color: #666; margin-bottom: 4px;">
-                  edprepmatters.aacte.org
-                </div>
-
-                <div style="font-size: 0.95em; font-weight: 700; line-height: 1.35;">
-                  Kansas State University's Chanh Lam Named 2026 AACTE James D. Anderson Outstanding Dissertation Award Winner
-                </div>
-              </div>
-            </a>
+  <div class="honors-list">
+    <div class="honor-item">
+      <div class="honor-year">2026</div>
+  <div class="honor-details">
+    <i>James D. Anderson Outstanding Dissertation Award</i><br>
+    American Association of Colleges for Teacher Education (AACTE)
+    <div class="honor-card">
+      <a href="https://edprepmatters.aacte.org/kansas-state-university-s-chanh-lam-named-2026-aacte-james-d-anderson-outstanding-dissertation-award-winner/"
+        target="_blank"
+        rel="noopener">
+        <img src="pictures/Dissertation-2026-Award-600x338.png"
+          alt="2026 AACTE James D. Anderson Outstanding Dissertation Award">
+        <div class="honor-card-text">
+          <div class="honor-card-source">
+            edprepmatters.aacte.org
           </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2026 &nbsp;</td>
-        <td><i>ATE-K Distinguished Dissertation Award</i><br>Kansas Association of Teacher Educators (ATE-K)</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2025 &nbsp;</td>
-        <td><i>Outstanding Graduate Student</i><br>College of Education, Kansas State University</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2024 &nbsp;</td>
-        <td><i>Outstanding Graduate Student Teaching</i><br>College of Education, Kansas State University</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2023 &nbsp;</td>
-        <td><i>College's Recognition</i><br>Graduate School, Kansas State University</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2021 &nbsp;</td>
-        <td><i>Outstanding Graduate Student</i><br>College of Education, Kansas State University</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2018 &nbsp;</td>
-        <td><i>Student with Excellent Academic Achievement</i><br>Ho Chi Minh City University of Education</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">2015 &nbsp;</td>
-        <td><i>Outstanding Contributor to Volunteering Activities</i><br>Ho Chi Minh City University of Education</td>
-      </tr>
-    </tbody>
-  </table>
-
+          <div class="honor-card-title">
+            Kansas State University's Chanh Lam Named 2026 AACTE James D. Anderson Outstanding Dissertation Award Winner
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="honor-item">
+  <div class="honor-year">2026</div>
+  <div class="honor-details">
+    <i>ATE-K Distinguished Dissertation Award</i><br>
+    Kansas Association of Teacher Educators (ATE-K)
+  </div>
+</div>
+<div class="honor-item">
+  <div class="honor-year">2025</div>
+  <div class="honor-details">
+    <i>Outstanding Graduate Student</i><br>
+    College of Education, Kansas State University
+  </div>
+</div>
+<div class="honor-item">
+  <div class="honor-year">2024</div>
+  <div class="honor-details">
+    <i>Outstanding Graduate Student Teaching</i><br>
+    College of Education, Kansas State University
+  </div>
+</div>
+<div class="honor-item">
+  <div class="honor-year">2023</div>
+  <div class="honor-details">
+    <i>College's Recognition</i><br>
+    Graduate School, Kansas State University
+  </div>
+</div>
+<div class="honor-item">
+  <div class="honor-year">2021</div>
+  <div class="honor-details">
+    <i>Outstanding Graduate Student</i><br>
+    College of Education, Kansas State University
+  </div>
+</div>
+<div class="honor-item">
+  <div class="honor-year">2018</div>
+  <div class="honor-details">
+    <i>Student with Excellent Academic Achievement</i><br>
+    Ho Chi Minh City University of Education
+  </div>
+</div>
+<div class="honor-item">
+  <div class="honor-year">2015</div>
+  <div class="honor-details">
+    <i>Outstanding Contributor to Volunteering Activities</i><br>
+    Ho Chi Minh City University of Education
+  </div>
+</div>
+  </div>
   <!-- Contact -->
   <h2 id="contact">Contact</h2>
-
   <p>
     Chanh Bao Lam, Ph.D.
   </p>
-
   <div class="contact-actions">
     <span class="social-links">
-      <a href="https://scholar.google.com/citations?user=BVUfin0AAAAJ&amp;hl=en&amp;oi=sra">
+      <a href="https://scholar.google.com/citations?user=BVUfin0AAAAJ&amp;hl=en&amp;oi=sra" target="_blank" rel="noopener">
         <img src="pictures/icon_gscholar.png" alt="Google Scholar" style="height: 20px; vertical-align: middle;">
       </a>
-
-      <a href="https://orcid.org/0000-0003-3991-0709">
-        <img src="pictures/icon_orcid.png" alt="ORCID" style="height: 20px; vertical-align: middle;">
-      </a>
-
-      <a href="https://www.linkedin.com/in/chanhblam">
-        <img src="pictures/icon_linkedin.png" alt="LinkedIn" style="height: 20px; vertical-align: middle;">
-      </a>
-
-      <a href="https://osf.io/jx94k/">
-        <img src="pictures/icon_osf.png" alt="OSF" style="height: 20px; vertical-align: middle;">
-      </a>
-
-      <a href="https://x.com/ChanhLam202">
-        <img src="pictures/icon_x.png" alt="X" style="height: 20px; vertical-align: middle;">
-      </a>
-
-      <a href="https://www.threads.com/@lbc2802">
-        <img src="pictures/icon_threads.png" alt="Threads" style="height: 20px; vertical-align: middle;">
-      </a>
+  <a href="https://orcid.org/0000-0003-3991-0709" target="_blank" rel="noopener">
+    <img src="pictures/icon_orcid.png" alt="ORCID" style="height: 20px; vertical-align: middle;">
+  </a>
+  <a href="https://www.linkedin.com/in/chanhblam" target="_blank" rel="noopener">
+    <img src="pictures/icon_linkedin.png" alt="LinkedIn" style="height: 20px; vertical-align: middle;">
+  </a>
+  <a href="https://osf.io/jx94k/" target="_blank" rel="noopener">
+    <img src="pictures/icon_osf.png" alt="OSF" style="height: 20px; vertical-align: middle;">
+  </a>
+  <a href="https://x.com/ChanhLam202" target="_blank" rel="noopener">
+    <img src="pictures/icon_x.png" alt="X" style="height: 20px; vertical-align: middle;">
+  </a>
+  <a href="https://www.threads.com/@lbc2802" target="_blank" rel="noopener">
+    <img src="pictures/icon_threads.png" alt="Threads" style="height: 20px; vertical-align: middle;">
+  </a>
+</span>
+<form
+  id="feedback-form"
+  class="feedback-form"
+  action="https://formspree.io/f/xbdekogl"
+  method="POST">
+  <input
+    type="hidden"
+    name="subject"
+    value="Website feedback">
+  <div class="feedback-buttons">
+    <button
+      type="submit"
+      class="feedback-button"
+      name="feedback"
+      value="Helpful"
+      aria-label="Helpful"
+      title="Helpful">
+      👍
+    </button>
+    <button
+      type="submit"
+      class="feedback-button"
+      name="feedback"
+      value="Interesting"
+      aria-label="Interesting"
+      title="Interesting">
+      ✨
+    </button>
+    <button
+      type="submit"
+      class="feedback-button"
+      name="feedback"
+      value="Say hello"
+      aria-label="Say hello"
+      title="Say hello">
+      👋
+    </button>
+    <span
+      id="feedback-status"
+      class="feedback-status"
+      aria-live="polite">
     </span>
-
-    <form
-      id="feedback-form"
-      class="feedback-form"
-      action="https://formspree.io/f/xbdekogl"
-      method="POST"
-    >
-      <input
-        type="hidden"
-        name="subject"
-        value="Website feedback"
-      >
-
-      <div class="feedback-buttons">
-        <button
-          type="submit"
-          class="feedback-button"
-          name="feedback"
-          value="Helpful"
-          aria-label="Helpful"
-          title="Helpful"
-        >
-          👍
-        </button>
-
-        <button
-          type="submit"
-          class="feedback-button"
-          name="feedback"
-          value="Interesting"
-          aria-label="Interesting"
-          title="Interesting"
-        >
-          ✨
-        </button>
-
-        <button
-          type="submit"
-          class="feedback-button"
-          name="feedback"
-          value="Say hello"
-          aria-label="Say hello"
-          title="Say hello"
-        >
-          👋
-        </button>
-
-        <span
-          id="feedback-status"
-          class="feedback-status"
-          aria-live="polite"
-        ></span>
-      </div>
-    </form>
   </div>
-
+</form>
+  </div>
   <p>
     Department of Curriculum and Instruction<br>
     College of Education, Kansas State University<br>
@@ -645,35 +800,25 @@
     <a href="tel:7855322030">785-532-2030</a><br>
     1114 Mid-Campus Dr, Manhattan, Kansas 66506
   </p>
-
-  <!-- Copyrights -->
   <footer class="site-footer">
     &copy; <span id="year"></span> Chanh Bao Lam
   </footer>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const feedbackForm = document.getElementById('feedback-form');
     const feedbackStatus = document.getElementById('feedback-status');
     const feedbackButtons = feedbackForm.querySelectorAll('.feedback-button');
-
     feedbackForm.addEventListener('submit', async function (event) {
       event.preventDefault();
-
       const clickedButton = event.submitter;
       const originalEmoji = clickedButton.textContent.trim();
       const formData = new FormData(feedbackForm);
-
       formData.set('feedback', clickedButton.value);
-
       feedbackButtons.forEach(function (button) {
         button.disabled = true;
       });
-
       clickedButton.textContent = '…';
       feedbackStatus.textContent = '';
-
       try {
         const response = await fetch(feedbackForm.action, {
           method: 'POST',
@@ -682,16 +827,12 @@
             Accept: 'application/json'
           }
         });
-
         if (!response.ok) {
           throw new Error('Submission failed');
         }
-
         clickedButton.textContent = '✓';
-
         window.setTimeout(function () {
           clickedButton.textContent = originalEmoji;
-
           feedbackButtons.forEach(function (button) {
             button.disabled = false;
           });
@@ -699,17 +840,14 @@
       } catch (error) {
         clickedButton.textContent = originalEmoji;
         feedbackStatus.textContent = 'Please try again.';
-
         feedbackButtons.forEach(function (button) {
           button.disabled = false;
         });
-
         window.setTimeout(function () {
           feedbackStatus.textContent = '';
         }, 2500);
       }
     });
   </script>
-
 </body>
 </html>
